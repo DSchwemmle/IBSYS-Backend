@@ -3,7 +3,6 @@ package com.ibsys.ibsysbackend.entities;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ibsys.ibsysbackend.dto.AppOrderDto;
 import com.ibsys.ibsysbackend.dto.ForecastDto;
-import com.ibsys.ibsysbackend.entities.importentities.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
