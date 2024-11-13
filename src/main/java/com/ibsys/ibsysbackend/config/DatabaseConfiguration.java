@@ -2,8 +2,8 @@ package com.ibsys.ibsysbackend.config;
 
 import com.ibsys.ibsysbackend.entities.*;
 import com.ibsys.ibsysbackend.repositories.ArticleRepository;
-import com.ibsys.ibsysbackend.repositories.neu.*;
-import com.ibsys.ibsysbackend.services.neu.StuecklistenGroup;
+import com.ibsys.ibsysbackend.repositories.*;
+import com.ibsys.ibsysbackend.services.StuecklistenGroup;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
