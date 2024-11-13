@@ -20,8 +20,8 @@ public class DatabaseConfiguration {
             final CapacityPlanRepository capacityPlanRepository,
             final CapacityPlanSumUpRepository capacityPlanSumUpRepository,
             final MaterialPlanRepository materialPlanRepository,
-            final VertriebswunschRepository vertriebswunschRepository
-    ) {
+            final SalesWishRepository salesWishRepository
+            ) {
         return args -> {
             // Sale and production program
             var saleAndProductionProgram = List.of(
@@ -1029,8 +1029,8 @@ public class DatabaseConfiguration {
                             .build()
             );
 
-            var vertriebswunschList = List.of(
-                    Vertriebswunsch.builder()
+            var salesWishList = List.of(
+                    SalesWish.builder()
                             .p1PNPlusOne(0)
                             .p1PNPlusTwo(0)
                             .p1PNPlusThree(0)
@@ -1053,7 +1053,7 @@ public class DatabaseConfiguration {
 
             materialPlanRepository.saveAll(materialPlanList);
 
-            vertriebswunschRepository.saveAll(vertriebswunschList);
+            salesWishRepository.saveAll(salesWishList);
         };
     }
 }

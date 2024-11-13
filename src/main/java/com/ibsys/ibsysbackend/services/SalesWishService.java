@@ -1,6 +1,7 @@
 package com.ibsys.ibsysbackend.services;
 
-import com.ibsys.ibsysbackend.repositories.VertriebswunschRepository;
+import com.ibsys.ibsysbackend.entities.SalesWish;
+import com.ibsys.ibsysbackend.repositories.SalesWishRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,13 +9,13 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class SalesWishService {
 
-    private VertriebswunschRepository vertriebswunschRepository;
+    private SalesWishRepository salesWishRepository;
 
-    public Vertriebswunsch getVertriebswunsch() {
-        return vertriebswunschRepository.findAll().get(0);
+    public SalesWish getSalesWish() {
+        return salesWishRepository.findAll().getFirst();
     }
 
-    public void updateVertriebswunsch(final Vertriebswunsch vertriebswunsch) {
-        vertriebswunschRepository.save(vertriebswunsch);
+    public void updateSalesWish(final SalesWish salesWish) {
+        salesWishRepository.save(salesWish);
     }
 }

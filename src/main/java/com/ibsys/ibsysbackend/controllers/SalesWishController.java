@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @CrossOrigin(origins = "*")
-@RequestMapping("/vertriebswunsch")
-public class VertriebswunschController {
+@RequestMapping("/sales-wish")
+public class SalesWishController {
 
-    private  salesWishtService;
+    private SalesWishService salesWishService;
 
     @GetMapping
-    public SalesWish getVertriebswunsch() {
-        return salesWishService.getVertriebswunsch();
+    public SalesWish getSalesWish() {
+        return salesWishService.getSalesWish();
     }
 
     @PutMapping
-    public void updateVertriebswunsch(@RequestBody final SalesWish salesWish) {
-        salesWishService.updateVertriebswunsch(salesWish);
+    public void updateSalesWish(@RequestBody final SalesWish salesWish) {
+        salesWishService.updateSalesWish(salesWish);
     }
 }
