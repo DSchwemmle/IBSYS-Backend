@@ -1,6 +1,6 @@
 package com.ibsys.ibsysbackend.controllers;
 
-import com.ibsys.ibsysbackend.WaitingListDto;
+import com.ibsys.ibsysbackend.dto.WaitingListDto;
 import com.ibsys.ibsysbackend.entities.WaitingList;
 import com.ibsys.ibsysbackend.services.WaitingListService;
 import lombok.AllArgsConstructor;

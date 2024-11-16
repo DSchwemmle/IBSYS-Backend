@@ -1,8 +1,7 @@
 package com.ibsys.ibsysbackend.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.ibsys.ibsysbackend.dto.AppOrderDto;
-import com.ibsys.ibsysbackend.dto.ForecastDto;
+import com.ibsys.ibsysbackend.dto.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,10 +22,10 @@ public class ImportData {
     private WarehouseStock warehousestock;
     private List<AppOrderDto> inwardstockmovement;
     private List<FutureInwardStockmovement> futureinwardstockmovement;
-    private IdleTimeCostsDto idletimecosts;
+    private IdleTimeCostDto idletimecosts;
     private List<WorkPlaceDto> waitinglistworkstations;
     private List<MissingPartDto> waitingliststock;
-    private List<OrdersInWorkWorkplaceDTO> ordersinwork;
+    private List<OrdersInWorkPlaceDto> ordersinwork;
     private List<AppOrderDto> completedorders;
-    private CycletimesDTO cycletimes;
+    private CycletimesDto cycletimes;
 }

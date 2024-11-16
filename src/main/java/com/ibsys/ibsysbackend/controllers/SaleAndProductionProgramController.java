@@ -1,6 +1,6 @@
 package com.ibsys.ibsysbackend.controllers;
 
-import com.ibsys.ibsysbackend.ApiRoutes;
+import com.ibsys.ibsysbackend.controllers.ApiRoutes;
 import com.ibsys.ibsysbackend.entities.SaleAndProductionProgram;
 import com.ibsys.ibsysbackend.services.SaleAndProductionProgramService;
 import lombok.AllArgsConstructor;

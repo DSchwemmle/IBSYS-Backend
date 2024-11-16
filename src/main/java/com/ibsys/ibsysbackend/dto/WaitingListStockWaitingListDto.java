@@ -1,28 +1,28 @@
 package com.ibsys.ibsysbackend.dto;
 
-import com.ibsys.ibsysbackend.entities.WaitingliststockWaitinglist;
+import com.ibsys.ibsysbackend.entities.WaitingListStockWaitingList;
 import lombok.*;
 
-@Builder
 @Getter
+@Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class WaitingliststockWaitinglistDTO {
+public class WaitingListStockWaitingListDto {
     private int period;
     private int orderNumber;
-    private int firstbatch;
-    private int lastbatch;
+    private int firstBatch;
+    private int lastBatch;
     private int item;
     private int amount;
     private int timeNeed;
 
-    public WaitingliststockWaitinglist toWaitingliststockWaitinglist() {
-        return WaitingliststockWaitinglist.builder()
+    public WaitingListStockWaitingList toWaitingListStockWaitingList() {
+        return WaitingListStockWaitingList.builder()
                 .period(period)
                 .orderNumber(orderNumber)
-                .firstbatch(firstbatch)
-                .firstbatch(lastbatch)
+                .firstBatch(firstBatch)
+                .lastBatch(lastBatch)
                 .item(item)
                 .amount(amount)
                 .timeNeed(timeNeed)

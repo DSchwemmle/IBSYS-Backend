@@ -1,33 +1,42 @@
 package com.ibsys.ibsysbackend.dto;
 
+import com.ibsys.ibsysbackend.dto.WaitingListWorkplaceDto;
 import com.ibsys.ibsysbackend.entities.WorkPlace;
+import lombok.*;
 
-public record WorkPlaceDto(
-        Integer id,
-        int setupevent,
-        int idletime,
-        String wageidletimecosts,
-        String wagecosts,
-        String machineidletimecosts,
-        int timeneed,
-        int period,
-        int orderNumber,
-        int batch,
-        int item,
-        int amount
-) {
+import java.util.List;
+
+@Builder
+@Getter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+public class WorkPlaceDto {
+    private int id;
+    private int setupevents;
+    private int idletime;
+    private String wageidletimecosts;
+    private String wagecosts;
+    private String machineidletimecosts;
+    private String timeneed;
+    private List<WaitingListWorkplaceDto> waitinglist;
+    private int period;
+    private int order;
+    private int batch;
+    private int item;
+    private int amount;
 
     public WorkPlace toWorkPlace() {
         return WorkPlace.builder()
                 .id(id)
-                .setupevent(setupevent)
+                .setupevent(setupevents)
                 .idletime(idletime)
                 .wageidletimecosts(wageidletimecosts)
                 .wagecosts(wagecosts)
                 .machineidletimecosts(machineidletimecosts)
-                .timeneed(timeneed)
+                .timeneed(Integer.parseInt(timeneed))
                 .period(period)
-                .orderNumber(orderNumber)
+                .orderNumber(order)
                 .batch(batch)
                 .item(item)
                 .amount(amount)

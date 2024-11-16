@@ -1,0 +1,15 @@
+version: '3'
+services:
+  ibsysbackend-database:
+    container_name: ibsysbackend-db
+    image: postgres:12
+    restart: unless-stopped
+    #user: "1000"
+    volumes:
+      - "/Users/dominikschwemmle/VSCodeProjects:/var/lib/postgresql/data"
+    ports:
+      - "127.0.0.1:5434:5432"
+    environment:
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'pwd'
+      POSTGRES_DB: 'ibsysbackend'
