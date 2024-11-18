@@ -29,7 +29,7 @@ public class WorkPlaceDto {
     public WorkPlace toWorkPlace() {
         return WorkPlace.builder()
                 .id(id)
-                .setupevent(setupevents)
+                .setupEvents(setupevents)
                 .idletime(idletime)
                 .wageidletimecosts(wageidletimecosts)
                 .wagecosts(wagecosts)

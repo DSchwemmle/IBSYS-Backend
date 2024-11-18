@@ -38,7 +38,7 @@ public class ImportService {
 
     @Transactional
     public void processImport(ImportData importData) {
-        List<Article> articles = importData.getWarehousestock().getArticle().stream()
+        List<Article> articles = importData.getWarehousestock().stream()
                 .map(ArticleDto::toArticle)
                 .toList();
 
@@ -98,12 +98,12 @@ public class ImportService {
 
     @Transactional
     public void importWaitingliststockWaitinglist(ImportData importData) {
-        List<WaitingliststockWaitinglist> waitinglists = new ArrayList<>();
+        List<WaitingListStockWaitingList> waitinglists = new ArrayList<>();
         importData.getWaitingliststock()
                 .forEach(missingPartDTO ->
                                 missingPartDTO.getWorkplace()
                                         .forEach(waitinglistWorkplaceDTO ->
-                                                waitinglistWorkplaceDTO.getWaitinglist().forEach(
+                                                waitinglistWorkplaceDTO.getWaitingList().forEach(
                                                         waitinglistDTO -> waitinglists.add(waitinglistDTO.toWaitingliststockWaitinglist())
                                                 )
                                         )
@@ -114,7 +114,7 @@ public class ImportService {
     @Transactional
     public void importOrdersInWorkWorkplace(ImportData importData) {
         ordersInWorkWorkplaceRepository.saveAll(importData.getOrdersinwork().stream()
-                .map(OrdersInWorkWorkplaceDTO::toOrdersInWorkWorkplace)
+                .map(OrdersInWorkWorkplace::toOrdersInWorkWorkplace)
                 .toList());
     }
 
@@ -153,7 +153,7 @@ public class ImportService {
                     .price(Double.parseDouble(a.price()))
                     .stockValue(Double.parseDouble(a.stockValue()))
                     .articleId(Integer.parseInt(a.id()))
-                   .build();
+                    .build();
             warehouseStockRepository.save(warehouseStock);
         });
     }
