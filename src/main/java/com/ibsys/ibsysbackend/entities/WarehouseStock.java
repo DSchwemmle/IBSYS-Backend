@@ -9,7 +9,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// Lagerarticle
 @Entity
 @Data
 @AllArgsConstructor
@@ -22,17 +21,18 @@ public class WarehouseStock {
     private Integer id;
 
     private Integer amount;
-
-    // TODO: What is this ??? Ask Robert
-    //  Remove if not master data
     private Double pct;
-
     private Double price;
-
-    //@JsonProperty("stockvalue")
     private Double stockValue;
-
     private Integer period;
-
     private Integer articleId;
+
+    // Neue Methode zur Kompatibilität
+    public Article getArticle() {
+        Article article = new Article();
+        article.setId(this.articleId);
+        article.setAmount(this.amount);
+        article.setPrice(this.price);
+        return article;
+    }
 }
