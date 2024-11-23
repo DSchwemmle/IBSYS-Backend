@@ -1,15 +1,15 @@
 package com.ibsys.ibsysbackend.dto;
 
+import com.ibsys.ibsysbackend.dto.WaitingListStockWorkplaceDto;
 import lombok.*;
 
 import java.util.List;
-//This file could case error
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class MissingPartDto {
     private Integer id;
-    private List<WaitingListStockWaitingListDto> workplace;
+    private List<WaitingListStockWorkplaceDto> workplace;
 }

@@ -15,10 +15,10 @@ public class WorkPlaceDto {
     private int id;
     private int setupevents;
     private int idletime;
-    private String wageidletimecosts;
-    private String wagecosts;
-    private String machineidletimecosts;
-    private String timeneed;
+    private double wageidletimecosts;
+    private double wagecosts;
+    private double machineidletimecosts;
+    private int timeneed;
     private List<WaitingListWorkplaceDto> waitinglist;
     private int period;
     private int order;
@@ -29,14 +29,14 @@ public class WorkPlaceDto {
     public WorkPlace toWorkPlace() {
         return WorkPlace.builder()
                 .id(id)
-                .setupevent(setupevents)
-                .idletime(idletime)
-                .wageidletimecosts(wageidletimecosts)
-                .wagecosts(wagecosts)
-                .machineidletimecosts(machineidletimecosts)
-                .timeneed(Integer.parseInt(timeneed))
+                .setupEvents(setupevents)
+                .idleTime(idletime)
+                .wageIdleTimeCosts(wageidletimecosts)
+                .wageCosts(wagecosts)
+                .machineIdleTimeCosts(machineidletimecosts)
+                .timeNeed(timeneed)
                 .period(period)
-                .orderNumber(order)
+                .appOrder(order)
                 .batch(batch)
                 .item(item)
                 .amount(amount)

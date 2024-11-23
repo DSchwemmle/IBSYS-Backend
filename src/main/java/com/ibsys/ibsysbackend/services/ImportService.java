@@ -1,7 +1,9 @@
 package com.ibsys.ibsysbackend.services;
 
 import com.ibsys.ibsysbackend.dto.ArticleDto;
+import com.ibsys.ibsysbackend.dto.OrdersInWorkPlaceDto;
 import com.ibsys.ibsysbackend.entities.WarehouseStock;
+import com.ibsys.ibsysbackend.entities.WarehouseStockIMPORT;
 import com.ibsys.ibsysbackend.entities.*;
 import com.ibsys.ibsysbackend.repositories.ArticleRepository;
 import com.ibsys.ibsysbackend.repositories.WarehouseStockRepository;
@@ -39,6 +41,7 @@ public class ImportService {
     @Transactional
     public void processImport(ImportData importData) {
         List<Article> articles = importData.getWarehousestock().getArticle().stream()
+
                 .map(ArticleDto::toArticle)
                 .toList();
 
@@ -98,23 +101,21 @@ public class ImportService {
 
     @Transactional
     public void importWaitingliststockWaitinglist(ImportData importData) {
-        List<WaitingliststockWaitinglist> waitinglists = new ArrayList<>();
-        importData.getWaitingliststock()
-                .forEach(missingPartDTO ->
-                                missingPartDTO.getWorkplace()
-                                        .forEach(waitinglistWorkplaceDTO ->
-                                                waitinglistWorkplaceDTO.getWaitinglist().forEach(
-                                                        waitinglistDTO -> waitinglists.add(waitinglistDTO.toWaitingliststockWaitinglist())
-                                                )
-                                        )
-                );
-        waitingliststockWaitlinglistRepository.saveAll(waitinglists);
+        List<WaitingListStockWaitingList> waitingLists = new ArrayList<>();
+        importData.getWaitingliststock().
+                forEach(missingPartDto ->
+                        missingPartDto.getWorkplace()
+                                .forEach(waitingListStockWorkplaceDto ->
+                                        waitingListStockWorkplaceDto.getWaitingList().forEach(
+                                                waitingListStockWaitingListDto -> waitingLists.add(waitingListStockWaitingListDto.toWaitingListStockWaitingList())
+                                        )));
+        waitingliststockWaitlinglistRepository.saveAll(waitingLists);
     }
 
     @Transactional
     public void importOrdersInWorkWorkplace(ImportData importData) {
         ordersInWorkWorkplaceRepository.saveAll(importData.getOrdersinwork().stream()
-                .map(OrdersInWorkWorkplaceDTO::toOrdersInWorkWorkplace)
+                .map(OrdersInWorkPlaceDto::toOrdersInWorkWorkplace)
                 .toList());
     }
 

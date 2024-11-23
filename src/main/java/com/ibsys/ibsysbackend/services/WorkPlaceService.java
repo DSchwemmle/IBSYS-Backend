@@ -4,7 +4,6 @@ import com.ibsys.ibsysbackend.dto.WorkPlaceDto;
 import com.ibsys.ibsysbackend.entities.WorkPlace;
 import com.ibsys.ibsysbackend.repositories.WorkPlaceRepository;
 import lombok.AllArgsConstructor;
-import org.hibernate.jdbc.Work;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

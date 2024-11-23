@@ -19,7 +19,7 @@ public class ImportData {
     private Integer period;
     @JsonProperty("forecast")
     private ForecastDto forecastDto;
-    private WarehouseStock warehousestock;
+    private WarehouseStockIMPORT warehousestock;
     private List<AppOrderDto> inwardstockmovement;
     private List<FutureInwardStockmovement> futureinwardstockmovement;
     private IdleTimeCostDto idletimecosts;
