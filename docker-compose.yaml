@@ -4,9 +4,9 @@ services:
     container_name: ibsysbackend-db
     image: postgres:12
     restart: unless-stopped
-    #user: "1000"
+    user: "postgres"
     volumes:
-      - "/Users/dominikschwemmle/VSCodeProjects:/var/lib/postgresql/data"
+      - "/Users/dominikschwemmle/PostgresData:/var/lib/postgresql/data"
     ports:
       - "127.0.0.1:5434:5432"
     environment:

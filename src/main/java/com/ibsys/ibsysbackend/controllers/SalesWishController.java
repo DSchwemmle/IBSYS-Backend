@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @CrossOrigin(origins = "*")
-@RequestMapping("/sales-wish")
+@RequestMapping("/vertriebswunsch")
 public class SalesWishController {
 
     private SalesWishService salesWishService;

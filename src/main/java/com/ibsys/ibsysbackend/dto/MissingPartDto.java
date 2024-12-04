@@ -1,9 +1,9 @@
 package com.ibsys.ibsysbackend.dto;
 
-import com.ibsys.ibsysbackend.dto.WaitingListStockWorkplaceDto;
 import lombok.*;
 
 import java.util.List;
+
 @Builder
 @Getter
 @ToString
