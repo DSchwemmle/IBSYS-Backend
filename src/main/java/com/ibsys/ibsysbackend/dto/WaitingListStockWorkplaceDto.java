@@ -11,5 +11,5 @@ import java.util.List;
 public class WaitingListStockWorkplaceDto {
     private List<WaitingListStockWaitingListDto> waitingList;
     private int id;
-    private int timeNeed;
+    private int timeneed;
 }

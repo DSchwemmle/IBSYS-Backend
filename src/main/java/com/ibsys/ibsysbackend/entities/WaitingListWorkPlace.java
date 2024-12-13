@@ -31,5 +31,5 @@ public class WaitingListWorkPlace {
     private int timeneed;
     @ManyToOne
     @JoinColumn(name = "workplace_fk")
-    private WorkPlace workplace;
+    private WorkPlaceIMPORT workplace;
 }

@@ -17,6 +17,7 @@ public class WaitingListStockWaitingListDto {
     private int amount;
     private int timeNeed;
 
+    // CHECK THIS
     public WaitingListStockWaitingList toWaitingListStockWaitingList() {
         return WaitingListStockWaitingList.builder()
                 .period(period)

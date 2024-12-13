@@ -2,6 +2,7 @@ package com.ibsys.ibsysbackend.dto;
 
 import com.ibsys.ibsysbackend.entities.WaitingListWorkPlace;
 import com.ibsys.ibsysbackend.entities.WorkPlace;
+import com.ibsys.ibsysbackend.entities.WorkPlaceIMPORT;
 import lombok.*;
 
 @Builder
@@ -18,7 +19,7 @@ public class WaitingListWorkplaceDto {
     private int item;
     private int amount;
     private String timeneed;
-    private WorkPlace workplace;
+    private WorkPlaceIMPORT workplace;
 
     public WaitingListWorkPlace toWaitinglistWorkplace() {
         return WaitingListWorkPlace.builder()

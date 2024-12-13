@@ -1,4 +1,3 @@
-version: '3'
 services:
   ibsysbackend-database:
     container_name: ibsysbackend-db

@@ -23,7 +23,7 @@ public class ImportData {
     private List<AppOrderDto> inwardstockmovement;
     private List<FutureInwardStockmovement> futureinwardstockmovement;
     private IdleTimeCostDto idletimecosts;
-    private List<WorkPlaceDto> waitinglistworkstations;
+    private List<WorkPlaceDtoIMPORT> waitinglistworkstations;
     private List<MissingPartDto> waitingliststock;
     private List<OrdersInWorkPlaceDto> ordersinwork;
     private List<AppOrderDto> completedorders;

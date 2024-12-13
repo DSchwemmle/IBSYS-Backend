@@ -3,7 +3,6 @@ package com.ibsys.ibsysbackend.services;
 import com.ibsys.ibsysbackend.dto.ArticleDto;
 import com.ibsys.ibsysbackend.dto.OrdersInWorkPlaceDto;
 import com.ibsys.ibsysbackend.entities.WarehouseStock;
-import com.ibsys.ibsysbackend.entities.WarehouseStockIMPORT;
 import com.ibsys.ibsysbackend.entities.*;
 import com.ibsys.ibsysbackend.repositories.ArticleRepository;
 import com.ibsys.ibsysbackend.repositories.WarehouseStockRepository;
@@ -84,7 +83,7 @@ public class ImportService {
         importData.getWaitinglistworkstations().forEach(
                 workplaceDTO -> {
                     log.debug(workplaceDTO.toString());
-                    WorkPlace workplace = workplaceRepository.save(workplaceDTO.toWorkPlace());
+                    WorkPlaceIMPORT workplace = workplaceRepository.save(workplaceDTO.toWorkPlace());
                     if(workplaceDTO.getWaitinglist() == null) {
                         return;
                     }
